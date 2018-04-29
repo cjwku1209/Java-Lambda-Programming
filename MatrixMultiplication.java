@@ -15,7 +15,7 @@ public class MatrixMultiplication {
 
 	public static void main(String[] args){
 		try{
-			Path path = Paths.get("p2input1.txt");
+			Path path = Paths.get("p2input2.txt");
 			long[][] matrix = Files.lines(path)
 					.map(
 							spacing -> Arrays.stream(spacing.split("\t"))
@@ -39,7 +39,7 @@ public class MatrixMultiplication {
 									toArray()
 					).toArray(long[][]::new);
 
-			File outputFile = new File("p2output1.txt");
+			File outputFile = new File("p2output2.txt");
 			PrintWriter writer = new PrintWriter(outputFile);
 
 			Arrays.stream(result)
