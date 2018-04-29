@@ -1,21 +1,21 @@
 # COMP4111 Assignment4- Java Lambda Programming
 Through the use of two important feature of Java 8: (1) the lambda	expressions	and	 (2)	 the	 streams	 API to complete three different task.
 
-#### Task 1- Prime Average
+### Task 1- Prime Average
 You	 are	 given	 a	 large	 list (millions) of	randomly	 generated	natural	 numbers (not	exceeding	java.lang.Long.MAX_VALUE),	your	task	is	to	identify	the prime	numbers	in the list	and	compute	their	average. You	are	required	to use the	higher-order	method	<b>filter</b> of	streams	to	finish	the	task.
 
 <b>Input:</b>	a	text	file,	each	line	of	which	contains	a	natural	number
 
 <b>Output:</b >the	total	number	of	prime	numbers	and	their	average (print	them	on	the	screen)
 
-#### Task 2- Matrix Multiplication
+### Task 2- Matrix Multiplication
 You	are	give	an integer	matrix	A of	size	M x N,	your task	is write	a	program	 to compute	A x A^(T) (A^(T) is	A’s	transpose). You	are	required	to	use	the	higher-order method <b>map</b> of	streams	to finish	the	task.
 
 <b>Input: </b>a	text	file	consisting	of	N lines,	each	of	which	contains M integers	separated	by tabs
 
 <b>Output: </b>the	resulting	matrix	of	size	M x M (please	save	the	result	to	a	text	file	of	the	same format	as	the input)
 
-#### Task 3- Word Count
+### Task 3- Word Count
 Suppose	you	are	given a set	of	words,	your	task	is	to	count	how	often	each	word	occurs.	You	should	 transform	all	words	into	lower	 cases before	 counting.	You	are	 required	 to	 use	 the	higher-order	method	<b>reduce</b> of	streams	to	finish	the	task.
 
 ## Getting Started
@@ -84,6 +84,7 @@ Long average = primeList.parallelStream().mapToLong(i->i.longValue()).parallel()
 System.out.print(primeList.size() + "\t" + average);
 }
 Average is calculated by the sum of all the primeList divided by the number of value in the list, which is `size()`. To calculate the sum of the primeList, we first have to convert the stream to do automatic unboxing and convert the value inside to Long by running `mapToLong(i->i.longValue())` and finding the sum by `sum()`. The function `parallelStream` and `parallel()` is used to make the stream run in parallel, so it can run faster.
+```
 
 ### Task 2- Matrix Multiplication
 
